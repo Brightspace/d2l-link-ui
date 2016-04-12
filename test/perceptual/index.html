@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 		<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents-lite.min.js"></script>
 		<link rel="import" href="../../link.html"> <!-- CHANGE TO VULCANIZED copy needs typography -->
-		<link rel="import" href="../../../vui-typography/typography.html">
 		<style is="custom-style" include="vui-typography">
 			html {
 				font-size: 20px;
@@ -23,8 +22,8 @@
 			}
 		</style>
 	</head>
-	<body class="vui-typography" unresolved>
-		<table>
+	<body unresolved>
+		<table class="vui-typography">
 			<thead>
 				<tr>
 					<th>No State</th>
@@ -39,6 +38,14 @@
 				<tr>
 					<td><a href="http://www.google.com" is="vui-link" main>Main Link</a></td>
 					<td><a href="http://www.google.com" is="vui-link" class="vui-link-focus" main>Main Link</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tbody>
+				<tr>
+					<td><a href="http://www.google.com" is="vui-link" stealth>Stealth Link</a></td>
+					<td><a href="http://www.google.com" is="vui-link" class="vui-link-focus" stealth>Stealth Link</a></td>
 				</tr>
 			</tbody>
 		</table>

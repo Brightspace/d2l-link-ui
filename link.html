@@ -1,8 +1,8 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../vui-colors/colors.html">
+<link rel="import" href="../vui-typography/typography.html">
 <dom-module id="vui-link">
 	<template>
-		<style include="vui-colors"></style>
+		<style include="vui-typography"></style>
 		<style>
 			:host, :host(:visited), :host(:active), :host(:link) {
 				color: var(--vui-color-celestine);
@@ -21,6 +21,11 @@
 				outline-width: 0;
 				@apply(--vui-link-hover);
 			}
+			:host([stealth]) {
+				text-decoration: none;
+				cursor: default;
+				@apply(--vui-font);
+			}
 		</style>
 		<content></content>
 	</template>
@@ -30,6 +35,11 @@
 			extends: 'a',
 			properties: {
 				main: {
+					type: Boolean,
+					reflectToAttribute: true,
+					value: false
+				},
+				stealth: {
 					type: Boolean,
 					reflectToAttribute: true,
 					value: false
