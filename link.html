@@ -4,29 +4,43 @@
 	<template>
 		<style include="vui-colors"></style>
 		<style>
+			:root {
+				--vui-link-default: {
+					color: var(--vui-color-celestine);
+					font-weight: normal;
+					text-decoration: none;
+					cursor: pointer;
+				}
+				--vui-link-main-default: {
+					font-weight: 700;
+				}
+				--vui-link-small-default: {
+					font-size: 0.7rem;
+					font-weight: 400;
+					line-height: 1rem;
+					letter-spacing: 0.02rem;
+				}
+				--vui-link-hover-default: {
+					color: var(--vui-color-celestuba);
+					text-decoration: underline;
+					outline-width: 0;
+				}
+			}
 			:host, :host(:visited), :host(:active), :host(:link) {
-				color: var(--vui-color-celestine);
-				font-weight: normal;
-				text-decoration: none;
-				cursor: pointer;
-				@apply(--vui-link);
+				@apply(--vui-link-default);
+				@apply(--vui-link-custom);
 			}
 			:host([main]) {
-				font-weight: 700;
-				@apply(--vui-link-main);
+				@apply(--vui-link-main-default);
+				@apply(--vui-link-main-custom);
 			}
 			:host([small]) {
-				font-size: 0.7rem;
-				font-weight: 400;
-				line-height: 1rem;
-				letter-spacing: 0.02rem;
-				@apply(--vui-link-small);
+				@apply(--vui-link-small-default);
+				@apply(--vui-link-small-custom);
 			}
 			:host(:hover), :host(:focus), :host(.vui-link-focus) {
-				color: var(--vui-color-celestuba);
-				text-decoration: underline;
-				outline-width: 0;
-				@apply(--vui-link-hover);
+				@apply(--vui-link-hover-default);
+				@apply(--vui-link-hover-custom);
 			}
 		</style>
 		<content></content>
