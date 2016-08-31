@@ -25,6 +25,11 @@
 				<a is="d2l-link" small>Link Test</a>
 			</template>
 		</test-fixture>
+		<test-fixture id="StrongLink">
+			<template>
+				<a is="d2l-link" strong>Link Test</a>
+			</template>
+		</test-fixture>
 
 		<script>
 		describe('<d2l-link>', function() {
@@ -118,6 +123,33 @@
 					expect(isNormal).to.be.true;
 				});
 
+			});
+
+			describe('Strong Link', function() {
+
+				beforeEach(function() {
+					link = fixture('StrongLink');
+				});
+
+				it('should set strong property when attribute is present', function() {
+					expect(link.strong).to.be.true;
+				});
+
+				it('should reflect strong property when attribute is remove', function() {
+					link.removeAttribute('strong');
+					expect(link.main).to.be.false;
+				});
+
+				it('should remove strong property when property is false', function() {
+					link.strong = false;
+					expect(link.hasAttribute('strong')).to.be.false;
+				});
+
+				it('should have a normal (400) font weight', function() {
+					var style = window.getComputedStyle(link);
+					var isNormal = style.fontWeight === 'normal' || style.fontWeight === '400';
+					expect(isNormal).to.be.true;
+				});
 			});
 		});
 		</script>

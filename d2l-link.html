@@ -21,6 +21,11 @@
 				letter-spacing: 0.02rem;
 				@apply(--d2l-link-small);
 			}
+			:host([strong]) {
+				font-weight: 400;
+				letter-spacing: 0.02rem;
+				@apply(--d2l-link-strong);
+			}
 			:host(:hover), :host(:focus), :host(.d2l-link-focus) {
 				color: var(--d2l-color-celestuba);
 				text-decoration: underline;
@@ -41,6 +46,11 @@
 					value: false
 				},
 				small: {
+					type: Boolean,
+					reflectToAttribute: true,
+					value: false
+				},
+				strong: {
 					type: Boolean,
 					reflectToAttribute: true,
 					value: false
