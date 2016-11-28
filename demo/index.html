@@ -1,54 +1,54 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Link Demo</title>
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-		<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents-lite.min.js"></script>
-		<link rel="import" href="../d2l-link.html">
-		<style>
-			@import url(https://s.brightspace.com/lib/fonts/0.3.0/fonts.css);
-			html {
-				font-size: 20px;
-			}
-			body {
-				font-family: 'Lato', sans-serif;
-				line-height: 1.5;
-			}
-			table {
-				max-width: 1000px;
-			}
-			td, th {
-				padding: 0.5rem;
-				white-space: nowrap;
-			}
-			td {
-				text-align: center;
-			}
-		</style>
-	</head>
-	<body unresolved>
-		<table>
-			<thead>
-				<tr>
-					<th>No State</th>
-					<th>Focused</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><a href="http://www.google.com" is="d2l-link">Standard Link</a></td>
-					<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus">Standard Link</a></td>
-				</tr>
-				<tr>
-					<td><a href="http://www.google.com" is="d2l-link" main>Main Link</a></td>
-					<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus" main>Main Link</a></td>
-				</tr>
-				<tr>
-					<td><a href="http://www.google.com" is="d2l-link" small>Small Link</a></td>
-					<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus" small>Small Link</a></td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
+<head>
+	<title>d2l-link</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents.min.js"></script>
+	<link rel="import" href="../../d2l-demo-template/d2l-demo-template.html">
+	<link rel="import" href="../d2l-link.html">
+	<style>
+		table {
+			font-size: 1rem;
+			max-width: 1000px;
+		}
+		td, th {
+			padding: 0.5rem;
+			white-space: nowrap;
+		}
+		td {
+			text-align: center;
+		}
+	</style>
+</head>
+<body unresolved>
+
+	<d2l-demo-template title="d2l-link">
+
+		<div class="d2l-demo-fixture">
+			<table>
+				<thead>
+					<tr>
+						<th>No State</th>
+						<th>Focused</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a href="http://www.google.com" is="d2l-link">Standard Link</a></td>
+						<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus">Standard Link</a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.google.com" is="d2l-link" main>Main Link</a></td>
+						<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus" main>Main Link</a></td>
+					</tr>
+					<tr>
+						<td><a href="http://www.google.com" is="d2l-link" small>Small Link</a></td>
+						<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus" small>Small Link</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</d2l-demo-template>
+
+</body>
 </html>
