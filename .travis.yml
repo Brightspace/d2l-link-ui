@@ -3,6 +3,7 @@ node_js: stable
 script:
 - npm run test:lint
 - polymer test --skip-plugin local
+- npm run test:galen:sauce
 addons:
   sauce_connect: true
   jwt:

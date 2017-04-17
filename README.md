@@ -10,7 +10,7 @@ Links look like this:
 
 ![example screenshot of link](/screenshots/overview.png?raw=true)
 
-For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
+For further information on this and other Brightspace UI components, see the docs at [ui.developers.brightspace.com](http://ui.developers.brightspace.com/).
 
 ## Installation
 
