@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
 		<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.23-d2l.3/webcomponents-lite.min.js"></script>
 		<link rel="import" href="../../d2l-link.html">
+		<link rel="stylesheet" href="link.css">
 		<style>
 		html {
 			font-family: Arial, sans-serif;
@@ -14,10 +15,25 @@
 		</style>
 	</head>
 	<body unresolved>
-		<a is="d2l-link" class="normal">Standard Link</p>
-		<a is="d2l-link" class="d2l-link-focus">Standard Link (Focus)</p>
-		<a is="d2l-link" main class="main">Main Link</p>
-		<a is="d2l-link" small class="small">Small Link</p>
-		<a is="d2l-link" main small class="main-small">Main Small Link</p>
+		<h2>Web Components</h2>
+		<a href="http://www.d2l.com" is="d2l-link" class="normal">Standard Link</a>
+		<hr>
+		<a href="http://www.d2l.com" is="d2l-link" class="d2l-link-focus">Standard Link (Focus)</a>
+		<hr>
+		<a href="http://www.d2l.com" is="d2l-link" main class="main">Main Link</a>
+		<hr>
+		<a href="http://www.d2l.com" is="d2l-link" small class="small">Small Link</a>
+		<hr>
+		<a href="http://www.d2l.com" is="d2l-link" main small class="main-small">Main Small Link</a>
+		<h2>SASS</h2>
+		<a href="http://www.d2l.com" class="custom-link normal">Standard Link</a>
+		<hr>
+		<a href="http://www.d2l.com" class="custom-link d2l-link-focus">Standard Link (Focus)</a>
+		<hr>
+		<a href="http://www.d2l.com" main class="custom-link main">Main Link</a>
+		<hr>
+		<a href="http://www.d2l.com" small class="custom-link small">Small Link</a>
+		<hr>
+		<a href="http://www.d2l.com" main small class="custom-link main-small">Main Small Link</a>
 	</body>
 </html>

@@ -1,10 +1,8 @@
-**Looking for SASS-based `d2l-link`?** It's [over here](https://github.com/BrightspaceUI/link/tree/sass).
-
 # d2l-link
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
-A [Polymer](https://www.polymer-project.org/1.0/)-based web component D2L link element.
+A [Polymer](https://www.polymer-project.org/1.0/)-based web component and [Sass](http://sass-lang.com/) mixins for a D2L link.
 
 Links look like this:
 
@@ -18,11 +16,54 @@ For further information on this and other Brightspace UI components, see the doc
 ```shell
 bower install d2l-link
 ```
+
+## Link Styles
+
+The following link styles are available for use in your application:
+
+### Standard
+
+This is the standard link style, used in most cases.
+
+![example screenshot of standard link](/screenshots/standard.png?raw=true)
+
+### Small
+
+Similarly styled to the standard link, but slightly smaller and more compact.
+
+![example screenshot of small link](/screenshots/small.png?raw=true)
+
+### Main
+
+Same size as the standard link, but bolder.
+
+![example screenshot of main link](/screenshots/main.png?raw=true)
+
 ## Usage
 
-### Standard Links
+Link styles can be applied using either a [Polymer](https://www.polymer-project.org/1.0/) web component or [Sass](http://sass-lang.com/) mixins. Which one you use depends on your technology stack and comfort with each.
 
-For most situations requiring a link:
+### Sass
+
+Import the `d2l-link.scss` file into your application's Sass. Then apply the `d2l-link()` mixin to your link elements:
+
+```sass
+@import 'bower_components/d2l-link/d2l-link.scss';
+
+.my-link {
+	@include d2l-link();
+}
+```
+
+The `small` and `main` styles can be applied by adding corresponding attributes to the HTML markup:
+
+```html
+<a href="foo.html" class="my-link">D2L Link</a>
+<a href="foo.html" class="my-link" small>Small Link</a>
+<a href="foo.html" class="my-link" main>Main Link</a>
+```
+
+### Polymer
 
 Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `d2l-link.html`:
 
@@ -33,38 +74,12 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyf
 </head>
 ```
 
-The native `<a>` element can now be extended to be a `d2l-link`:
+The native `<a>` element can now be extended to be a `d2l-link` with the `is="d2l-link"` attribute. Similarly to Sass, the `small` and `main` link styles can be achieved by adding their corresponding attributes:
 
 ```html
-<a href="foo.html" is="d2l-link">Take me to Foo</a>
-```
-
-Result:
-
-![example screenshot of standard link](/screenshots/standard.png?raw=true)
-
-### Main Links
-
-For links which require more emphasis:
-
-Follow the steps above for a standard link and include the boolean attribute `main`.
-
-```html
-<a href="ultimate-foo.html" is="d2l-link" main>Take me to the ultimate Foo!</a>
-```
-
-Result:
-
-![example screenshot of main link](/screenshots/main.png?raw=true)
-
-### Small Links
-
-For links that should take up less space:
-
-Follow the steps above for a standard link and include the boolean attribute `small`.
-
-```html
-<a href="small-foo.html" is="d2l-link" small>This way to Foo</a>
+<a href="foo.html" is="d2l-link">D2L Link</a>
+<a href="foo.html" is="d2l-link" small>Small Link</a>
+<a href="foo.html" is="d2l-link" main>Main Link</a>
 ```
 
 ## Testing
