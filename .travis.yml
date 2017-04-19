@@ -3,12 +3,16 @@ node_js: stable
 script:
 - npm run test:lint
 - polymer test --skip-plugin local
+- npm run test:galen:sauce
 addons:
-  sauce_connect: true
+  apt:
+    packages:
+      - oracle-java8-installer
   jwt:
-    # SAUCE_ACCESS_KEY
-    secure: Gvu/Z4MhLq5kmhWcnDWfJ/CyAuA4aR3Rkz5bgnbd1Z0V41200vPdcUv32s2KgMlJt3zwMRACIAwYxZu7N1K+eh1LD4fq7LednNlQ4FNlWMLybmB7G7ze1tUjt5ESVYK04RI9mm9qyNSC1ao6pRXO0UPf3z6KgwPl8QAZDJldIF4=
+    secure: MXlloSa+k+ma0yZEpXYtm0C6Y7/lvaxO2edWZEkUfByNzs+n1DL8O/dvqkQHXIBQkx/DHOCtPbCJDT5H2HBLzDUi0ttJT6YixVDIjdIUlMiuyHi8RdHeDfpRT4PIakEEFLxdhB5xC4usD4wstjKK0mINR6V2n36el0eE+9QPEvM=
+before_install:
+- export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+- export PATH=$JAVA_HOME/bin:$PATH
 env:
   global:
-    # SAUCE_USERNAME
-    secure: CkvZ9UNWh9n12jFC6CDg7bTCp9XbQ6Fsrow3xafvrz7cKbsVUnpj5fvSq0YtkiDe2thyIBfUKrvC+BdWbZBs5t1KqsxQVXMpDzcJPXvV2GdIET0dzM1buzOfIHBznFUuXZbhUcp0nDRbMiWK6jAaYuyXX4wU8zMJ8rWtS9ZMUPI=
+    SAUCE_USERNAME: Desire2Learn

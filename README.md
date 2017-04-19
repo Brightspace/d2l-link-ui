@@ -10,7 +10,7 @@ Links look like this:
 
 ![example screenshot of link](/screenshots/overview.png?raw=true)
 
-For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
+For further information on this and other Brightspace UI components, see the docs at [ui.developers.brightspace.com](http://ui.developers.brightspace.com/).
 
 ## Installation
 
@@ -67,11 +67,17 @@ Follow the steps above for a standard link and include the boolean attribute `sm
 <a href="small-foo.html" is="d2l-link" small>This way to Foo</a>
 ```
 
-## Running tests locally in Windows
+## Testing
 
-Tests in this repo use web-component-tester (WCT). Currently WCT has an issue in Windows with tests taking about a minute to start.  A workaround is to set two environment variables for Launchpad (a library used by WCT).  These help bypass browser searching which is what causes the delay.  For example:
-LAUNCHPAD_BROWSERS=CHROME
-LAUNCHPAD_CHROME-'C:\Program Files (x86)\Google\Chrome\Application'
+There are 3 stages of tests which run with `npm test`:
+
+1. Linting: lints the web component using [Polymer CLI](https://www.polymer-project.org/2.0/docs/tools/polymer-cli#lint) and everything else using [eslint's HTML plugin](https://www.npmjs.com/package/eslint-plugin-html)
+2. Web Component Tests: found in `test\index.html`, this runs basic [Polymer CLI](https://www.polymer-project.org/2.0/docs/tools/polymer-cli#tests) tests
+3. Galen Tests: Found in `test\acceptance`, these test the resolved CSS using the [Galen Framework](http://galenframework.com/).
+
+### Dumping Galen Output
+
+The output of the Galen tests can be dumped using the command `npm run galen:local:dump`. Screenshots of the test objects will be put in `test\acceptance\dumps`, and can be used to perform perceptual diffs before/after any changes. The  "baseline" version should be committed to source control.
 
 ## Coding styles
 
