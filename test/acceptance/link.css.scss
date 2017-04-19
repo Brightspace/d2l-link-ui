@@ -1,0 +1,5 @@
+@import '../../d2l-link.scss';
+
+.custom-link {
+	@include d2l-link();
+}

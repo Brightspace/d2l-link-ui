@@ -6,11 +6,11 @@
 	main-small-*	.main-small
 
 @groups
-	normals normal-1
-	normal-focuses normal-focus-1
-	mains main-1
-	smalls small-1
-	main-smalls main-small-1
+	normals normal-1, normal-2
+	normal-focuses normal-focus-1, normal-focus-2
+	mains main-1, main-2
+	smalls small-1, small-2
+	main-smalls main-small-1, main-small-2
 
 = Links =
 	&normals:

@@ -1,6 +1,6 @@
 {
   "name": "d2l-link",
-  "description": "Polymer-based web component for a D2L link",
+  "description": "Polymer-based web component and Sass mixins for a D2L link",
   "main": "d2l-link.html",
   "license": "Apache-2.0",
   "keywords": [
@@ -8,7 +8,8 @@
     "ui",
     "link",
     "polymer",
-    "web component"
+    "web component",
+	"sass"
   ],
   "ignore": [
     "test",
