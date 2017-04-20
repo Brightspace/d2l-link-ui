@@ -1,38 +1,48 @@
 @objects
-	normal-*		.normal
-	normal-focus-*	.d2l-link-focus
-	main-*			.main
-	small-*			.small
-	main-small-*	.main-small
+	custom-element-standard			#custom-element-standard
+	custom-element-standard-focus	#custom-element-standard-focus
+	custom-element-main				#custom-element-main
+	custom-element-small			#custom-element-small
+	custom-element-main-small		#custom-element-main-small
+	polymer-mixin-standard			#polymer-mixin-standard
+	polymer-mixin-standard-focus	#polymer-mixin-standard-focus
+	polymer-mixin-main				#polymer-mixin-main
+	polymer-mixin-small				#polymer-mixin-small
+	polymer-mixin-main-small		#polymer-mixin-main-small
+	sass-mixin-standard				#sass-mixin-standard
+	sass-mixin-standard-focus		#sass-mixin-standard-focus
+	sass-mixin-main					#sass-mixin-main
+	sass-mixin-small				#sass-mixin-small
+	sass-mixin-main-small			#sass-mixin-main-small
 
 @groups
-	normals normal-1, normal-2
-	normal-focuses normal-focus-1, normal-focus-2
-	mains main-1, main-2
-	smalls small-1, small-2
-	main-smalls main-small-1, main-small-2
+	standard custom-element-standard, polymer-mixin-standard, sass-mixin-standard
+	standard-focus custom-element-standard-focus, polymer-mixin-standard-focus, sass-mixin-standard-focus
+	main custom-element-main, polymer-mixin-main, sass-mixin-main
+	small custom-element-small, polymer-mixin-small, sass-mixin-small,
+	main-small custom-element-main-small, polymer-mixin-main-small, sass-mixin-main-small
 
 = Links =
-	&normals:
+	&standard:
 		css color matches "#006fbf|rgba\\(0, 111, 191, 1\\)|rgb\\(0, 111, 191\\)"
 		css font-size is "20px"
 		css font-weight matches "normal|400"
 		css text-decoration matches "none|none solid rgb\\(0, 111, 191\\)"
 		css cursor is "pointer"
-	&normal-focuses:
+	&standard-focus:
 		css color matches "#1c5295|rgba\\(28, 82, 149, 1\\)|rgb\\(28, 82, 149\\)"
 		css font-size is "20px"
 		css font-weight matches "normal|400"
 		css text-decoration matches "underline|underline solid rgb\\(28, 82, 149\\)"
 		css outline-width is "0px"
 		css cursor is "pointer"
-	&mains:
+	&main:
 		css color matches "#006fbf|rgba\\(0, 111, 191, 1\\)|rgb\\(0, 111, 191\\)"
 		css font-size is "20px"
 		css font-weight matches "bold|700"
 		css text-decoration matches "none|none solid rgb\\(0, 111, 191\\)"
 		css cursor is "pointer"
-	&smalls:
+	&small:
 		css color matches "#006fbf|rgba\\(0, 111, 191, 1\\)|rgb\\(0, 111, 191\\)"
 		css font-size is "14px"
 		css font-weight matches "normal|400"
@@ -40,7 +50,7 @@
 		css line-height matches "21px"
 		css text-decoration matches "none|none solid rgb\\(0, 111, 191\\)"
 		css cursor is "pointer"
-	&main-smalls:
+	&main-small:
 		css color matches "#006fbf|rgba\\(0, 111, 191, 1\\)|rgb\\(0, 111, 191\\)"
 		css font-size is "14px"
 		css font-weight matches "bold|700"

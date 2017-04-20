@@ -1,30 +1,19 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../d2l-colors/d2l-colors.html">
-
+<link rel="import" href="d2l-link-shared-styles.html">
 <dom-module id="d2l-link">
 	<template strip-whitespace>
 		<style>
 			:host, :host(:visited), :host(:active), :host(:link) {
-				color: var(--d2l-color-celestine);
-				text-decoration: none;
-				cursor: pointer;
-				@apply(--d2l-link);
+				@apply --d2l-link;
 			}
 			:host([main]) {
-				font-weight: 700;
-				@apply(--d2l-link-main);
+				@apply --d2l-link-main;
 			}
 			:host([small]) {
-				font-size: 0.7rem;
-				line-height: 1.05rem;
-				letter-spacing: 0.01rem;
-				@apply(--d2l-link-small);
+				@apply --d2l-link-small;
 			}
 			:host(:hover), :host(:focus), :host(.d2l-link-focus) {
-				color: var(--d2l-color-celestuba);
-				text-decoration: underline;
-				outline-width: 0;
-				@apply(--d2l-link-hover);
+				@apply --d2l-link-hover;
 			}
 		</style>
 		<content></content>
