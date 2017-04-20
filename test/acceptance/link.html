@@ -13,27 +13,58 @@
 			font-size: 20px;
 		}
 		</style>
+		<custom-style>
+			<style is="custom-style">
+				.polymer-mixin-link,
+				.polymer-mixin-link:visited,
+				.polymer-mixin-link:active,
+				.polymer-mixin-link:link {
+					@apply --d2l-link;
+				}
+				.polymer-mixin-link[main] {
+					@apply --d2l-link-main;
+				}
+				.polymer-mixin-link[small] {
+					@apply --d2l-link-small;
+				}
+				.polymer-mixin-link:hover,
+				.polymer-mixin-link:focus,
+				.polymer-mixin-link.d2l-link-focus {
+					@apply --d2l-link-hover;
+				}
+			</style>
+		</custom-style>
 	</head>
 	<body unresolved>
-		<h2>Web Components</h2>
-		<a href="http://www.d2l.com" is="d2l-link" class="normal">Standard Link</a>
+		<h2>Web Components: custom elements</h2>
+		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-standard">Standard Link</a>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" class="d2l-link-focus">Standard Link (Focus)</a>
+		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-standard-focus" class="d2l-link-focus">Standard Link (Focus)</a>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" main class="main">Main Link</a>
+		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-main" main>Main Link</a>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" small class="small">Small Link</a>
+		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-small" small>Small Link</a>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" main small class="main-small">Main Small Link</a>
-		<h2>SASS</h2>
-		<a href="http://www.d2l.com" class="custom-link normal">Standard Link</a>
+		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-main-small" main small>Main Small Link</a>
+		<h2>Web Components: Polymer Mixins</h2>
+		<a href="http://www.d2l.com" id="polymer-mixin-standard" class="polymer-mixin-link">Standard Link</a>
 		<hr>
-		<a href="http://www.d2l.com" class="custom-link d2l-link-focus">Standard Link (Focus)</a>
+		<a href="http://www.d2l.com" id="polymer-mixin-standard-focus" class="polymer-mixin-link d2l-link-focus">Standard Link (Focus)</a>
 		<hr>
-		<a href="http://www.d2l.com" main class="custom-link main">Main Link</a>
+		<a href="http://www.d2l.com" id="polymer-mixin-main" main class="polymer-mixin-link">Main Link</a>
 		<hr>
-		<a href="http://www.d2l.com" small class="custom-link small">Small Link</a>
+		<a href="http://www.d2l.com" id="polymer-mixin-small" small class="polymer-mixin-link">Small Link</a>
 		<hr>
-		<a href="http://www.d2l.com" main small class="custom-link main-small">Main Small Link</a>
+		<a href="http://www.d2l.com" id="polymer-mixin-main-small" main small class="polymer-mixin-link">Main Small Link</a>
+		<h2>SASS: Mixins</h2>
+		<a href="http://www.d2l.com" id="sass-mixin-standard" class="sass-mixin-link">Standard Link</a>
+		<hr>
+		<a href="http://www.d2l.com" id="sass-mixin-standard-focus" class="sass-mixin-link d2l-link-focus">Standard Link (Focus)</a>
+		<hr>
+		<a href="http://www.d2l.com" id="sass-mixin-main" main class="sass-mixin-link">Main Link</a>
+		<hr>
+		<a href="http://www.d2l.com" id="sass-mixin-small" small class="sass-mixin-link">Small Link</a>
+		<hr>
+		<a href="http://www.d2l.com" id="sass-mixin-main-small" main small class="sass-mixin-link">Main Small Link</a>
 	</body>
 </html>
