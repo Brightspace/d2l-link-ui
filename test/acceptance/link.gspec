@@ -30,10 +30,10 @@
 		css text-decoration matches "none|none solid rgb\\(0, 111, 191\\)"
 		css cursor is "pointer"
 	&standard-focus:
-		css color matches "#1c5295|rgba\\(28, 82, 149, 1\\)|rgb\\(28, 82, 149\\)"
+		css color matches "#005694|rgba\\(0, 86, 148, 1\\)|rgb\\(0, 86, 148\\)"
 		css font-size is "20px"
 		css font-weight matches "normal|400"
-		css text-decoration matches "underline|underline solid rgb\\(28, 82, 149\\)"
+		css text-decoration matches "underline|underline solid rgb\\(0, 86, 148\\)"
 		css outline-width is "0px"
 		css cursor is "pointer"
 	&main:
