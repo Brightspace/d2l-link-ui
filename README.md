@@ -2,7 +2,7 @@
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
-A [Polymer](https://www.polymer-project.org/1.0/)-based web component and [Sass](http://sass-lang.com/) mixins for a D2L link.
+[Polymer](https://www.polymer-project.org/1.0/)-based web component and [Sass](http://sass-lang.com/) mixins for a D2L link.
 
 Links look like this:
 
@@ -41,7 +41,7 @@ Same size as the standard link, but bolder.
 
 ## Usage
 
-Link styles can be applied using either a [Polymer](https://www.polymer-project.org/1.0/) web component or [Sass](http://sass-lang.com/) mixins. Which one you use depends on your technology stack and comfort with each.
+Link styles can be applied using either a [Polymer](https://www.polymer-project.org/) web component or [Sass](http://sass-lang.com/) mixins. Which one you use depends on your technology stack and comfort with each.
 
 ### Sass
 
@@ -69,34 +69,62 @@ Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyf
 
 ```html
 <head>
-	<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents-lite.min.js"></script>
-	<link rel="import" href="../d2l-link/d2l-link.html">
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<link rel="import" href="bower_components/d2l-link/d2l-link.html">
 </head>
 ```
 
-The native `<a>` element can now be extended to be a `d2l-link` with the `is="d2l-link"` attribute. Similarly to Sass, the `small` and `main` link styles can be achieved by adding their corresponding attributes:
+The native `<a>` element can now be replaced with `<d2l-link>`. Similarly to Sass, the `small` and `main` link styles can be achieved by adding their corresponding attributes:
 
 ```html
-<a href="foo.html" is="d2l-link">D2L Link</a>
-<a href="foo.html" is="d2l-link" small>Small Link</a>
-<a href="foo.html" is="d2l-link" main>Main Link</a>
+<d2l-link href="foo.html">D2L Link</d2l-link>
+<d2l-link href="foo.html" small>Small Link</d2l-link>
+<d2l-link href="foo.html" main>Main Link</d2l-link>
 ```
 
-## Testing
+## Developing, Testing and Contributing
 
-There are 3 stages of tests which run with `npm test`:
+After cloning the repo, run `npm install` to install dependencies.
 
-1. Linting: lints the web component using [Polymer CLI](https://www.polymer-project.org/2.0/docs/tools/polymer-cli#lint) and everything else using [eslint's HTML plugin](https://www.npmjs.com/package/eslint-plugin-html)
-2. Web Component Tests: found in `test\index.html`, this runs basic [Polymer CLI](https://www.polymer-project.org/2.0/docs/tools/polymer-cli#tests) tests
-3. Galen Tests: Found in `test\acceptance`, these test the resolved CSS using the [Galen Framework](http://galenframework.com/).
+If you don't have it already, install the [Polymer CLI](https://www.polymer-project.org/2.0/docs/tools/polymer-cli) globally:
+
+```shell
+npm install -g polymer-cli
+```
+
+To start a [local web server](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#serve) that hosts the demo page and tests:
+
+```shell
+polymer serve
+```
+
+To lint ([eslint](http://eslint.org/) and [Polymer lint](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#lint)):
+
+```shell
+npm run test:lint
+```
+
+To run unit tests locally using [Polymer test](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#tests):
+
+```shell
+polymer test --skip-plugin sauce
+```
+
+To run [Galen Tests](http://galenframework.com/), which test the resolved CSS:
+
+```shell
+npm run galen:local:run
+```
+
+To lint AND run local unit tests AND Galen tests:
+
+```shell
+npm test
+```
 
 ### Dumping Galen Output
 
 The output of the Galen tests can be dumped using the command `npm run galen:local:dump`. Screenshots of the test objects will be put in `test\acceptance\dumps`, and can be used to perform perceptual diffs before/after any changes. The  "baseline" version should be committed to source control.
-
-## Coding styles
-
-See the [Best Practices & Style Guide](https://github.com/Brightspace/valence-ui-docs/wiki/Best-Practices-&-Style-Guide) for information on naming conventions, plus information about the [EditorConfig](http://editorconfig.org) rules used in this repo.
 
 [bower-url]: http://bower.io/search/?q=d2l-link
 [bower-image]: https://img.shields.io/bower/v/d2l-link.svg

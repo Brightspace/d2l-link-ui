@@ -1,54 +1,48 @@
-<html>
-<head>
-	<title>d2l-link</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.21/webcomponents.min.js"></script>
-	<link rel="import" href="../../d2l-demo-template/d2l-demo-template.html">
-	<link rel="import" href="../d2l-link.html">
-	<style>
-		table {
-			font-size: 1rem;
-			max-width: 1000px;
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<title>d2l-link demo</title>
+		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+		<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+		<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+		<link rel="import" href="../../d2l-typography/d2l-typography.html">
+		<link rel="import" href="../d2l-link.html">
+		<custom-style>
+			<style is="custom-style" include="demo-pages-shared-styles"></style>
+		</custom-style>
+		<custom-style include="d2l-typography">
+			<style is="custom-style" include="d2l-typography"></style>
+		</custom-style>
+		<style>
+		html {
+			font-size: 20px;
 		}
-		td, th {
-			padding: 0.5rem;
-			white-space: nowrap;
-		}
-		td {
-			text-align: center;
-		}
-	</style>
-</head>
-<body unresolved>
+		</style>
+	</head>
+	<body unresolved class="d2l-typography">
+		<div class="vertical-section-container centered">
+			<h3>Standard Link</h3>
+			<demo-snippet>
+				<template>
+					<d2l-link href="https://www.d2l.com">Standard Link</d2l-link>
+				</template>
+			</demo-snippet>
 
-	<d2l-demo-template title="d2l-link">
+			<h3>Main Link</h3>
+			<demo-snippet>
+				<template>
+					<d2l-link main href="https://www.d2l.com">Main Link</d2l-link>
+				</template>
+			</demo-snippet>
 
-		<div class="d2l-demo-fixture">
-			<table>
-				<thead>
-					<tr>
-						<th>No State</th>
-						<th>Focused</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><a href="http://www.google.com" is="d2l-link">Standard Link</a></td>
-						<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus">Standard Link</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.google.com" is="d2l-link" main>Main Link</a></td>
-						<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus" main>Main Link</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.google.com" is="d2l-link" small>Small Link</a></td>
-						<td><a href="http://www.google.com" is="d2l-link" class="d2l-link-focus" small>Small Link</a></td>
-					</tr>
-				</tbody>
-			</table>
+			<h3>Small Link</h3>
+			<demo-snippet>
+				<template>
+					<d2l-link small href="https://www.d2l.com">Small Link</d2l-link>
+				</template>
+			</demo-snippet>
 		</div>
-
-	</d2l-demo-template>
-
-</body>
+	</body>
 </html>
