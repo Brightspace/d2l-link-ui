@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>link</title>
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-		<script src="https://s.brightspace.com/lib/webcomponentsjs/0.7.23-d2l.3/webcomponents-lite.min.js"></script>
+		<script src="../../../webcomponentsjs/webcomponents-lite.js"></script>
 		<link rel="import" href="../../d2l-link.html">
 		<link rel="stylesheet" href="link.css">
 		<style>
@@ -37,15 +37,15 @@
 	</head>
 	<body unresolved>
 		<h2>Web Components: custom elements</h2>
-		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-standard">Standard Link</a>
+		<d2l-link href="http://www.d2l.com" id="custom-element-standard">Standard Link</d2l-link>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-standard-focus" class="d2l-link-focus">Standard Link (Focus)</a>
+		<d2l-link href="http://www.d2l.com" id="custom-element-standard-focus" class="d2l-link-focus">Standard Link (Focus)</d2l-link>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-main" main>Main Link</a>
+		<d2l-link href="http://www.d2l.com" id="custom-element-main" main>Main Link</d2l-link>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-small" small>Small Link</a>
+		<d2l-link href="http://www.d2l.com" id="custom-element-small" small>Small Link</d2l-link>
 		<hr>
-		<a href="http://www.d2l.com" is="d2l-link" id="custom-element-main-small" main small>Main Small Link</a>
+		<d2l-link href="http://www.d2l.com" id="custom-element-main-small" main small>Main Small Link</d2l-link>
 		<h2>Web Components: Polymer Mixins</h2>
 		<a href="http://www.d2l.com" id="polymer-mixin-standard" class="polymer-mixin-link">Standard Link</a>
 		<hr>
