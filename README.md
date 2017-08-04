@@ -1,4 +1,5 @@
 # d2l-link
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/BrightspaceUI/link)
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
@@ -127,6 +128,6 @@ npm test
 The output of the Galen tests can be dumped using the command `npm run galen:local:dump`. Screenshots of the test objects will be put in `test\acceptance\dumps`, and can be used to perform perceptual diffs before/after any changes. The  "baseline" version should be committed to source control.
 
 [bower-url]: http://bower.io/search/?q=d2l-link
-[bower-image]: https://img.shields.io/bower/v/d2l-link.svg
+[bower-image]: https://badge.fury.io/bo/d2l-link.svg
 [ci-image]: https://travis-ci.org/BrightspaceUI/link.svg?branch=master
 [ci-url]: https://travis-ci.org/BrightspaceUI/link
