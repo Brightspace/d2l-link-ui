@@ -3,7 +3,7 @@
 [![Bower version][bower-image]][bower-url]
 [![Build status][ci-image]][ci-url]
 
-[Polymer](https://www.polymer-project.org/1.0/)-based web component and [Sass](http://sass-lang.com/) mixins for a D2L link.
+[Polymer](https://www.polymer-project.org)-based web component and [Sass](http://sass-lang.com/) mixins for a D2L link.
 
 Links look like this:
 
