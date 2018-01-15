@@ -9,16 +9,19 @@
     "link",
     "polymer",
     "web component",
-	"sass"
+    "sass"
   ],
   "ignore": [
+    "demo",
     "test",
     "screenshots",
     ".editorconfig",
+    ".eslintrc.json",
     ".gitattributes",
     ".gitignore",
     ".travis.yml",
     "package.json",
+    "polymer.json",
     "wct.conf.json"
   ],
   "dependencies": {
