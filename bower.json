@@ -25,30 +25,20 @@
     "wct.conf.json"
   ],
   "dependencies": {
-    "d2l-colors": "^3.1.0 || ^2.4.0",
-    "polymer": "Polymer/polymer#1.9 - 2"
+    "d2l-colors": "^3.1.2",
+    "polymer": "1.9 - 2"
   },
   "devDependencies": {
-    "d2l-typography": "^5.4.0 || ^6.0.0",
-    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
-    "web-component-tester": "^6.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
-    "iron-test-helpers": "^2.0.0"
+    "d2l-typography": "^6.0.0",
+    "iron-component-page": "^2.0.0",
+    "iron-demo-helpers": "^2.0.0",
+    "iron-test-helpers": "^2.0.0",
+    "web-component-tester": "^6.0.0"
   },
   "variants": {
     "1.x": {
       "dependencies": {
-        "polymer": "Polymer/polymer#^1.9.3",
-        "d2l-colors": "^2.4.0"
-      },
-      "devDependencies": {
-        "d2l-typography": "^5.4.0",
-        "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-        "web-component-tester": "^4.0.0",
-        "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-        "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-        "iron-test-helpers": "^2.0.0"
+        "polymer": "^1.9.3"
       },
       "resolutions": {
         "webcomponentsjs": "^0.7"
@@ -58,5 +48,4 @@
   "resolutions": {
     "webcomponentsjs": "^1.0.0"
   }
-
 }
