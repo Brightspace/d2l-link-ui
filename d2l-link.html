@@ -37,8 +37,11 @@ Polymer-based web component for a D2L link
 	<script>
 		Polymer({
 			is: 'd2l-link',
-			behaviors: [window.D2L.PolymerBehaviors.Link.Behavior],
+
+			behaviors: [D2L.PolymerBehaviors.Link.Behavior],
+
 			properties: {
+
 				/**
 				 * When this attribute is present, a bolder style is applied.
 				 */
@@ -47,6 +50,7 @@ Polymer-based web component for a D2L link
 					reflectToAttribute: true,
 					value: false
 				},
+
 				/**
 				 * When this attribute is present, the link will appear smaller.
 				 */
@@ -55,6 +59,7 @@ Polymer-based web component for a D2L link
 					reflectToAttribute: true,
 					value: false
 				}
+
 			}
 		});
 	</script>

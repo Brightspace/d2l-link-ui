@@ -44,6 +44,57 @@ Same size as the standard link, but bolder.
 
 Link styles can be applied using either a [Polymer](https://www.polymer-project.org/) web component or [Sass](http://sass-lang.com/) mixins. Which one you use depends on your technology stack and comfort with each.
 
+### Polymer
+
+Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `d2l-link.html`:
+
+```html
+<head>
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="d2l-link.html">
+</head>
+```
+
+The native `<a>` element can now be replaced with `<d2l-link>`. Similarly to Sass, the `small` and `main` link styles can be achieved by adding their corresponding attributes:
+
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../d2l-typography/d2l-typography.html">
+    <link rel="import" href="d2l-link.html">
+    <custom-style include="d2l-typography">
+      <style is="custom-style" include="d2l-typography"></style>
+    </custom-style>
+    <style>
+      html {
+        font-size: 20px;
+      }
+      body {
+        color: var(--d2l-color-ferrite);
+        font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+        letter-spacing: 0.01rem;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+      }
+      d2l-link {
+        display: inline-block;
+        margin-right: 15px;
+      }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<d2l-link href="foo.html">D2L Link</d2l-link>
+<d2l-link href="foo.html" small>Small Link</d2l-link>
+<d2l-link href="foo.html" main>Main Link</d2l-link>
+```
+
 ### Sass
 
 Import the `d2l-link.scss` file into your application's Sass. Then apply the `d2l-link()` mixin to your link elements:
@@ -62,25 +113,6 @@ The `small` and `main` styles can be applied by adding corresponding attributes 
 <a href="foo.html" class="my-link">D2L Link</a>
 <a href="foo.html" class="my-link" small>Small Link</a>
 <a href="foo.html" class="my-link" main>Main Link</a>
-```
-
-### Polymer
-
-Include the [webcomponents.js](http://webcomponents.org/polyfills/) "lite" polyfill (for browsers who don't natively support web components), then import `d2l-link.html`:
-
-```html
-<head>
-	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-	<link rel="import" href="bower_components/d2l-link/d2l-link.html">
-</head>
-```
-
-The native `<a>` element can now be replaced with `<d2l-link>`. Similarly to Sass, the `small` and `main` link styles can be achieved by adding their corresponding attributes:
-
-```html
-<d2l-link href="foo.html">D2L Link</d2l-link>
-<d2l-link href="foo.html" small>Small Link</d2l-link>
-<d2l-link href="foo.html" main>Main Link</d2l-link>
 ```
 
 ## Developing, Testing and Contributing
