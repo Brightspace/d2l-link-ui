@@ -79,6 +79,10 @@ The native `<a>` element can now be replaced with `<d2l-link>`. Similarly to Sas
         font-weight: 400;
         line-height: 1.4rem;
       }
+      d2l-link {
+        display: inline-block;
+        margin-right: 15px;
+      }
     </style>
     <next-code-block></next-code-block>
   </template>
