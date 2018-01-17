@@ -2,7 +2,7 @@
 
 var browsers = {
 	phantomjs: new LocalBrowserFactory({
-		browser: 'phantomjs'
+		browser: 'chrome'
 	}),
 	chromeWindows: new SauceBrowserFactory({
 		browser: 'Chrome',
@@ -40,7 +40,7 @@ var browsers = {
 	})
 };
 
-var endpoint = 'http://localhost:8080/components/d2l-link/test/acceptance/link.html';
+var endpoint = 'http://localhost:8081/components/d2l-link/test/acceptance/link.html';
 var spec = 'test/acceptance/link.gspec';
 
 polymerTests(browsers, function(test) {
