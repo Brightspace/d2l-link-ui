@@ -30,10 +30,10 @@ var browsers = {
 			chromedriverVersion: '2.24'
 		}
 	}),
-	safariMac: new SauceBrowserFactory({
+	/*safariMac: new SauceBrowserFactory({
 		browser: 'Safari',
 		platform: 'SIERRA'
-	}),
+	}),*/
 	firefoxMac: new SauceBrowserFactory({
 		browser: 'Firefox',
 		platform: 'SIERRA'
