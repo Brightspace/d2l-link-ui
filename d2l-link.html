@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../d2l-polymer-behaviors/d2l-focusable-behavior.html">
 <link rel="import" href="d2l-link-behavior.html">
 <link rel="import" href="d2l-link-shared-styles.html">
 <!--
@@ -26,7 +27,7 @@ Polymer-based web component for a D2L link
 			}
 		</style>
 		<a
-			class="d2l-link-elem"
+			class="d2l-link-elem d2l-focusable"
 			download$="[[download]]"
 			href$="[[href]]"
 			hreflang="[[hreflang]]"
@@ -38,7 +39,10 @@ Polymer-based web component for a D2L link
 		Polymer({
 			is: 'd2l-link',
 
-			behaviors: [D2L.PolymerBehaviors.Link.Behavior],
+			behaviors: [
+				D2L.PolymerBehaviors.Link.Behavior,
+				D2L.PolymerBehaviors.FocusableBehavior
+			],
 
 			properties: {
 
