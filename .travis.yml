@@ -1,18 +1,24 @@
 language: node_js
 node_js: node
 script:
-- npm run test:lint
-- polymer test --skip-plugin local
-- npm run test:galen:sauce
+- npm run lint
+- |
+  if [ $TRAVIS_PULL_REQUEST != false ] && [ $TRAVIS_SECURE_ENV_VARS == true ]; then
+    echo "Pull request with secure environment variables, running Sauce tests...";
+    npm run test:polymer:sauce && npm run test:galen:sauce || travis_terminate 1;
+  else
+    echo "Not a pull request and/or no secure environment variables, running headless tests...";
+    npm run test:polymer:local || travis_terminate 1;
+  fi
 addons:
   apt:
     packages:
-      - oracle-java8-installer
-  jwt:
-    secure: MXlloSa+k+ma0yZEpXYtm0C6Y7/lvaxO2edWZEkUfByNzs+n1DL8O/dvqkQHXIBQkx/DHOCtPbCJDT5H2HBLzDUi0ttJT6YixVDIjdIUlMiuyHi8RdHeDfpRT4PIakEEFLxdhB5xC4usD4wstjKK0mINR6V2n36el0eE+9QPEvM=
+    - oracle-java8-installer
+  chrome: stable
 before_install:
 - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 - export PATH=$JAVA_HOME/bin:$PATH
 env:
   global:
-    SAUCE_USERNAME: Desire2Learn
+  - SAUCE_USERNAME: Desire2Learn
+  - secure: OiBrrLVxknJO2DGUuxz9Hkg98Zcot7HklpraLHdejsqfqEkEs8NQxr+YVFTNYSNhnzI4nwumhvGYcnlOcdA2+XQlTrJuwPI8eH9dDFEaQs3Qlo92yNjnoLDF93XbZihp4qYtOxBiPuW1rsIZ8bTTxkSbJ2Cxc3wEJWuTx01m2YY=
