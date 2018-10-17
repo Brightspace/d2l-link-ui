@@ -28,7 +28,6 @@ var browsers = {
 };
 
 var mainlineEndpoint = 'http://localhost:8081/components/d2l-link/test/acceptance/link.html';
-var xEndpoint = 'http://localhost:8000/components/d2l-link/test/acceptance/link.html';
 var spec = 'test/acceptance/link.gspec';
 var shadowSpec = 'test/acceptance/link.shadow.gspec';
 
@@ -38,20 +37,6 @@ polymerTests(browsers, function(test) {
 	 * selectors working with Polymer 2 */
 	test('mainline-button-shady', {
 		endpoint: mainlineEndpoint + '?wc-shadydom=true&wc-ce=true',
-		spec: spec,
-		size: '1024x768',
-		tags: ['desktop']
-	});
-
-	test.shadow('1.x-button-shadow', {
-		endpoint: xEndpoint + '?dom=shadow',
-		spec: shadowSpec,
-		size: '1024x768',
-		tags: ['desktop']
-	});
-
-	test('1.x-button-shady', {
-		endpoint: xEndpoint + '?wc-shadydom=true&wc-ce=true',
 		spec: spec,
 		size: '1024x768',
 		tags: ['desktop']
