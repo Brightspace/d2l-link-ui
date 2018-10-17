@@ -3,3 +3,4 @@ node_modules
 reports
 bower-*.json
 package-lock.json
+toPolymer3.sh
