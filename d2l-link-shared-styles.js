@@ -6,12 +6,12 @@ $_documentContainer.innerHTML = `<custom-style>
 	<style is="custom-style">
 		html {
 			--d2l-link: {
-				color: var(--d2l-color-celestine);
+				color: purple;
 				text-decoration: none;
 				cursor: pointer;
 			};
 			--d2l-link-hover: {
-				color: var(--d2l-color-celestine-minus-1);
+				color: pink;
 				text-decoration: underline;
 				outline-width: 0;
 			};
