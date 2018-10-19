@@ -4,10 +4,11 @@
 		<meta charset="UTF-8">
 		<title>d2l-link tests</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-		<script src="../../web-component-tester/browser.js"></script>
-		<link rel="import" href="../../iron-test-helpers/mock-interactions.html">
-		<link rel="import" href="../d2l-link.html">
+		<script src="../../@babel/polyfill/browser.js"></script>
+		<script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+		<script src="../../wct-browser-legacy/browser.js"></script>
+		<script type="module" src="../../@polymer/iron-test-helpers/mock-interactions.js"></script>
+		<script type="module" src="../d2l-link.js"></script>
 	</head>
 	<body>
 		<test-fixture id="standard">
@@ -18,7 +19,7 @@
 		<test-fixture id="attributes">
 			<template>
 				<d2l-link
-				 	download
+					download
 					href="https://www.d2l.com"
 					hreflang="en"
 					main
@@ -29,133 +30,133 @@
 			</template>
 		</test-fixture>
 
-		<script>
-		describe('d2l-link', () => {
-			var elem;
+		<script type="module">
+import '../../@polymer/iron-test-helpers/mock-interactions.js';
+import '../d2l-link.js';
+describe('d2l-link', () => {
+	var elem;
 
-			describe('Standard link', () => {
+	describe('Standard link', () => {
 
-				beforeEach(() => {
-					elem = fixture('standard');
-				});
-
-				it('should instantiate the element', () => {
-					elem = fixture('standard');
-					expect(elem.is).to.equal('d2l-link');
-				});
-
-				it('should execute onclick when clicked', (done) => {
-					elem.addEventListener('click', () => {
-						done();
-					});
-					MockInteractions.tap(elem);
-				});
-
-				it('should default "main" to false when unset', () => {
-					expect(elem.main).to.be.false;
-				});
-
-				it('should reflect main attribute to property', () => {
-					elem.setAttribute('main', 'main');
-					expect(elem.main).to.be.true;
-				});
-
-				it('should add main attribute when property is true', () => {
-					elem.main = true;
-					expect(elem.hasAttribute('main')).to.be.true;
-				});
-
-			});
-
-			describe('attributes', () => {
-
-				beforeEach(() => {
-					elem = fixture('standard');
-				});
-
-				describe('string', () => {
-					[
-						{name: 'href', value: 'https://www.d2l.com', valueAlt: 'https://www.brightspace.com'},
-						{name: 'hreflang', value: 'en', valueAlt: 'fr'},
-						{name: 'rel', value: 'this that', valueAlt: 'other thing'},
-						{name: 'target', value: '_blank', valueAlt: 'foo'},
-						{name: 'type', value: 'image/jpeg', valueAlt: 'text/html'}
-					].forEach((attr) => {
-
-						it(`should default "${attr.name}" to undefined`, () => {
-							expect(elem[attr.name]).to.be.undefined;
-							expect(elem.hasAttribute(attr.name)).to.be.false;
-							expect(elem.$$('a').hasAttribute(attr.name)).to.be.false;
-						});
-
-						it(`should reflect "${attr.name}" property change to attribute and anchor`, () => {
-							elem[attr.name] = attr.valueAlt;
-							expect(elem.getAttribute(attr.name)).to.equal(attr.valueAlt);
-							expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.valueAlt);
-						});
-
-						it(`should reflect "${attr.name}" attribute change to property and anchor`, () => {
-							elem.setAttribute(attr.name, attr.valueAlt);
-							expect(elem[attr.name]).to.equal(attr.valueAlt);
-							expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.valueAlt);
-						});
-
-						it(`should have initial value "${attr.name}" of "${attr.value}"`, () => {
-							elem = fixture('attributes');
-							expect(elem[attr.name]).to.equal(attr.value);
-							expect(elem.getAttribute(attr.name)).to.be.equal(attr.value);
-							expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.value);
-						});
-
-					});
-				});
-
-				describe('boolean', () => {
-					[
-						{name: 'download', reflect: true},
-						{name: 'main', reflect: false},
-						{name: 'small', reflect: false}
-					].forEach(function(attr) {
-
-						it(`should default "${attr.name}" to false`, function() {
-							expect(elem[attr.name]).to.be.false;
-							expect(elem.hasAttribute(attr.name)).to.be.false;
-							if (attr.reflect) {
-								expect(elem.$$('a').hasAttribute(attr.name)).to.be.false;
-							}
-						});
-
-						it(`should reflect "${attr.name}" property change to attribute`, function() {
-							elem[attr.name] = true;
-							expect(elem.hasAttribute(attr.name)).to.be.true;
-							if (attr.reflect) {
-								expect(elem.$$('a').hasAttribute(attr.name)).to.be.true;
-							}
-						});
-
-						it(`should reflect "${attr.name}" attribute change to property`, function() {
-							elem.setAttribute(attr.name, attr.name);
-							expect(elem[attr.name]).to.be.true;
-							if (attr.reflect) {
-								expect(elem.$$('a').hasAttribute(attr.name)).to.be.true;
-							}
-						});
-
-						it(`should have initial value "${attr.name}" of true`, () => {
-							elem = fixture('attributes');
-							expect(elem[attr.name]).to.be.true;
-							expect(elem.hasAttribute(attr.name)).to.be.true;
-							if (attr.reflect) {
-								expect(elem.$$('a').hasAttribute(attr.name)).to.be.true;
-							}
-						});
-
-					});
-				});
-
-			});
-
+		beforeEach(() => {
+			elem = fixture('standard');
 		});
-		</script>
-	</body>
-</html>
+
+		it('should instantiate the element', () => {
+			elem = fixture('standard');
+			expect(elem.is).to.equal('d2l-link');
+		});
+
+		it('should execute onclick when clicked', (done) => {
+			elem.addEventListener('click', () => {
+				done();
+			});
+			MockInteractions.tap(elem);
+		});
+
+		it('should default "main" to false when unset', () => {
+			expect(elem.main).to.be.false;
+		});
+
+		it('should reflect main attribute to property', () => {
+			elem.setAttribute('main', 'main');
+			expect(elem.main).to.be.true;
+		});
+
+		it('should add main attribute when property is true', () => {
+			elem.main = true;
+			expect(elem.hasAttribute('main')).to.be.true;
+		});
+
+	});
+
+	describe('attributes', () => {
+
+		beforeEach(() => {
+			elem = fixture('standard');
+		});
+
+		describe('string', () => {
+			[
+				{name: 'href', value: 'https://www.d2l.com', valueAlt: 'https://www.brightspace.com'},
+				{name: 'hreflang', value: 'en', valueAlt: 'fr'},
+				{name: 'rel', value: 'this that', valueAlt: 'other thing'},
+				{name: 'target', value: '_blank', valueAlt: 'foo'},
+				{name: 'type', value: 'image/jpeg', valueAlt: 'text/html'}
+			].forEach((attr) => {
+
+				it(`should default "${attr.name}" to undefined`, () => {
+					expect(elem[attr.name]).to.be.undefined;
+					expect(elem.hasAttribute(attr.name)).to.be.false;
+					expect(elem.$$('a').hasAttribute(attr.name)).to.be.false;
+				});
+
+				it(`should reflect "${attr.name}" property change to attribute and anchor`, () => {
+					elem[attr.name] = attr.valueAlt;
+					expect(elem.getAttribute(attr.name)).to.equal(attr.valueAlt);
+					expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.valueAlt);
+				});
+
+				it(`should reflect "${attr.name}" attribute change to property and anchor`, () => {
+					elem.setAttribute(attr.name, attr.valueAlt);
+					expect(elem[attr.name]).to.equal(attr.valueAlt);
+					expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.valueAlt);
+				});
+
+				it(`should have initial value "${attr.name}" of "${attr.value}"`, () => {
+					elem = fixture('attributes');
+					expect(elem[attr.name]).to.equal(attr.value);
+					expect(elem.getAttribute(attr.name)).to.be.equal(attr.value);
+					expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.value);
+				});
+
+			});
+		});
+
+		describe('boolean', () => {
+			[
+				{name: 'download', reflect: true},
+				{name: 'main', reflect: false},
+				{name: 'small', reflect: false}
+			].forEach(function(attr) {
+
+				it(`should default "${attr.name}" to false`, function() {
+					expect(elem[attr.name]).to.be.false;
+					expect(elem.hasAttribute(attr.name)).to.be.false;
+					if (attr.reflect) {
+						expect(elem.$$('a').hasAttribute(attr.name)).to.be.false;
+					}
+				});
+
+				it(`should reflect "${attr.name}" property change to attribute`, function() {
+					elem[attr.name] = true;
+					expect(elem.hasAttribute(attr.name)).to.be.true;
+					if (attr.reflect) {
+						expect(elem.$$('a').hasAttribute(attr.name)).to.be.true;
+					}
+				});
+
+				it(`should reflect "${attr.name}" attribute change to property`, function() {
+					elem.setAttribute(attr.name, attr.name);
+					expect(elem[attr.name]).to.be.true;
+					if (attr.reflect) {
+						expect(elem.$$('a').hasAttribute(attr.name)).to.be.true;
+					}
+				});
+
+				it(`should have initial value "${attr.name}" of true`, () => {
+					elem = fixture('attributes');
+					expect(elem[attr.name]).to.be.true;
+					expect(elem.hasAttribute(attr.name)).to.be.true;
+					if (attr.reflect) {
+						expect(elem.$$('a').hasAttribute(attr.name)).to.be.true;
+					}
+				});
+
+			});
+		});
+
+	});
+
+});
+</script>
