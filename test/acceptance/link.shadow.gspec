@@ -1,8 +1,0 @@
-@objects
-	custom-element-standard			#custom-element-standard /deep/ a
-	custom-element-standard-focus	#custom-element-standard-focus /deep/ a
-	custom-element-main				#custom-element-main /deep/ a
-	custom-element-small			#custom-element-small /deep/ a
-	custom-element-main-small		#custom-element-main-small /deep/ a
-
-@import link.common.gspec
