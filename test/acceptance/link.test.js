@@ -3,7 +3,7 @@
 var browsers = {
 	chrome: new LocalBrowserFactory({
 		browser: 'chrome'
-	}),
+	})/*,
 	chromeWindows: new SauceBrowserFactory({
 		browser: 'Chrome',
 		platform: 'WIN10'
@@ -16,15 +16,15 @@ var browsers = {
 	/*edgeWindows: new SauceBrowserFactory({
 		browser: 'microsoftedge',
 		platform: 'WIN10'
-	}),*/
+	}),
 	/*safariMac: new SauceBrowserFactory({
 		browser: 'Safari',
 		platform: 'SIERRA'
-	}),*/
+	}),
 	firefoxMac: new SauceBrowserFactory({
 		browser: 'Firefox',
 		platform: 'SIERRA'
-	})
+	})*/
 };
 
 var mainlineEndpoint = 'http://localhost:8081/components/d2l-link/test/acceptance/link.html';
