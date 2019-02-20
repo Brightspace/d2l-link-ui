@@ -18,20 +18,7 @@ addons:
 before_install:
 - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 - export PATH=$JAVA_HOME/bin:$PATH
-- |
-  if [ "$TRAVIS_BRANCH" == "master" ] && [ $TRAVIS_PULL_REQUEST == false ]; then
-    echo "Not a Pull Request and on branch master so bumping version";
-    frauci-update-version;
-    export TRAVIS_TAG=$(frauci-get-version)
-  fi
-deploy:
-  provider: releases
-  api_key: "$GITHUB_RELEASE_TOKEN"
-  on:
-    tags: true
 env:
   global:
-  - REPO_NAME=link
   - SAUCE_USERNAME: Desire2Learn
   - secure: OiBrrLVxknJO2DGUuxz9Hkg98Zcot7HklpraLHdejsqfqEkEs8NQxr+YVFTNYSNhnzI4nwumhvGYcnlOcdA2+XQlTrJuwPI8eH9dDFEaQs3Qlo92yNjnoLDF93XbZihp4qYtOxBiPuW1rsIZ8bTTxkSbJ2Cxc3wEJWuTx01m2YY=
-  - secure: VQG/4O+tDMa5k0C051jllUxYWM5fw7MCn1gNhP8qZjIcFGVQ9miDYXmr+NGpsP1CfTCKKkYxuE0aVsPi4IG0+dsNIhOfyEb+LT3o4F18L8CxPdRu62rfaR0a2/xudZd7TABmZJ4oc3DbqmqFRBPF0HrPPP6eZG8wQFSbs8IXLAU=
