@@ -31,6 +31,7 @@ deploy:
     tags: true
 env:
   global:
+  - OWNER_NAME=BrightspaceUI
   - REPO_NAME=link
   - SAUCE_USERNAME: Desire2Learn
   - secure: OiBrrLVxknJO2DGUuxz9Hkg98Zcot7HklpraLHdejsqfqEkEs8NQxr+YVFTNYSNhnzI4nwumhvGYcnlOcdA2+XQlTrJuwPI8eH9dDFEaQs3Qlo92yNjnoLDF93XbZihp4qYtOxBiPuW1rsIZ8bTTxkSbJ2Cxc3wEJWuTx01m2YY=
