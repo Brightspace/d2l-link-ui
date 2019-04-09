@@ -19,7 +19,8 @@
 		<test-fixture id="attributes">
 			<template>
 				<d2l-link
-					 download
+					aria-label='My Aria Label'
+					download
 					href="https://www.d2l.com"
 					hreflang="en"
 					main
@@ -82,30 +83,36 @@ describe('d2l-link', () => {
 				{name: 'hreflang', value: 'en', valueAlt: 'fr'},
 				{name: 'rel', value: 'this that', valueAlt: 'other thing'},
 				{name: 'target', value: '_blank', valueAlt: 'foo'},
-				{name: 'type', value: 'image/jpeg', valueAlt: 'text/html'}
+				{name: 'type', value: 'image/jpeg', valueAlt: 'text/html'},
+				{name: 'aria-label', internalName: 'ariaLabel', ignoreReflectToAttribute: true, value: 'My Aria Label', valueAlt: 'Screen Reader Text'}
 			].forEach((attr) => {
 
+				const internalName = attr.internalName || attr.name;
+
 				it(`should default "${attr.name}" to undefined`, () => {
-					expect(elem[attr.name]).to.be.undefined;
+					expect(elem[internalName]).to.be.undefined;
 					expect(elem.hasAttribute(attr.name)).to.be.false;
 					expect(elem.$$('a').hasAttribute(attr.name)).to.be.false;
 				});
 
 				it(`should reflect "${attr.name}" property change to attribute and anchor`, () => {
-					elem[attr.name] = attr.valueAlt;
-					expect(elem.getAttribute(attr.name)).to.equal(attr.valueAlt);
+					elem[internalName] = attr.valueAlt;
+
+					if (!attr.ignoreReflectToAttribute) {
+						expect(elem.getAttribute(attr.name)).to.equal(attr.valueAlt);
+					}
 					expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.valueAlt);
 				});
 
 				it(`should reflect "${attr.name}" attribute change to property and anchor`, () => {
 					elem.setAttribute(attr.name, attr.valueAlt);
-					expect(elem[attr.name]).to.equal(attr.valueAlt);
+					expect(elem[internalName]).to.equal(attr.valueAlt);
 					expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.valueAlt);
 				});
 
 				it(`should have initial value "${attr.name}" of "${attr.value}"`, () => {
 					elem = fixture('attributes');
-					expect(elem[attr.name]).to.equal(attr.value);
+					expect(elem[internalName]).to.equal(attr.value);
 					expect(elem.getAttribute(attr.name)).to.be.equal(attr.value);
 					expect(elem.$$('a').getAttribute(attr.name)).to.equal(attr.value);
 				});

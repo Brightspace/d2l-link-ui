@@ -35,9 +35,9 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-link">
 				@apply --d2l-link-hover;
 			}
 		</style>
-		<a class="d2l-link-elem d2l-focusable" download$="[[download]]" href$="[[href]]" hreflang="[[hreflang]]" rel="[[rel]]" target="[[target]]" type="[[type]]"><slot></slot></a>
+		<a class="d2l-link-elem d2l-focusable" aria-label$="[[ariaLabel]]" download$="[[download]]" href$="[[href]]" hreflang="[[hreflang]]" rel="[[rel]]" target="[[target]]" type="[[type]]"><slot></slot></a>
 	</template>
-	
+
 </dom-module>`;
 
 document.head.appendChild($_documentContainer.content);
@@ -50,6 +50,13 @@ Polymer({
 	],
 
 	properties: {
+
+		/**
+		 * A string to be used as the accessible label, which overrides text content.
+		 */
+		ariaLabel: {
+			type: String
+		},
 
 		/**
 		 * When this attribute is present, a bolder style is applied.
