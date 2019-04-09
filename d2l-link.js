@@ -55,8 +55,7 @@ Polymer({
 		 * A string to be used as the accessible label, which overrides text content.
 		 */
 		ariaLabel: {
-			type: String,
-			reflectToAttribute: true
+			type: String
 		},
 
 		/**
