@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+		<title>d2l-link demo</title>
+		<script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+		<script type="module" src="../../d2l-typography/d2l-typography.js"></script>
+		<script type="module" src="../d2l-link.js"></script>
+		<style>
+			html {
+				font-size: 20px;
+			}
+			@media (prefers-color-scheme: dark) {
+				html {
+					background-color: #18191a;
+				}
+			}
+		</style>
+	</head>
+	<body unresolved class="d2l-typography">
+
+		<custom-style include="d2l-typography">
+			<style is="custom-style" include="d2l-typography"></style>
+		</custom-style>
+
+		<div>
+			<h3>Standard Link</h3>
+			<d2l-link href="https://www.d2l.com">Standard Link</d2l-link>
+
+
+			<h3>Main Link</h3>
+			<d2l-link main="" href="https://www.d2l.com">Main Link</d2l-link>
+
+
+			<h3>Small Link</h3>
+			<d2l-link small="" href="https://www.d2l.com">Small Link</d2l-link>
+
+		</div>
+
+	</body>
+</html>
