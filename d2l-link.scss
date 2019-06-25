@@ -24,15 +24,15 @@
 		line-height: 1.05rem;
 		letter-spacing: 0.01rem;
 	}
-	@media (prefers-color-scheme: dark) {
-		&,
-		&:visited,
-		&:link,
-		&:active,
-		&:hover,
-		&:focus,
-		&.d2l-link-focus {
-			color: $d2l-color-celestine-plus-1;
-		}
+
+	&.d2l-dark-mode,
+	&.d2l-dark-mode:visited,
+	&.d2l-dark-mode:link,
+	&.d2l-dark-mode:active,
+	&.d2l-dark-mode:hover,
+	&.d2l-dark-mode:focus,
+	&.d2l-dark-mode.d2l-link-focus {
+		color: $d2l-color-celestine-plus-1;
 	}
+
 }

@@ -34,12 +34,16 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-link">
 			.d2l-link-elem:hover, .d2l-link-elem:focus, :host(.d2l-link-focus) .d2l-link-elem {
 				@apply --d2l-link-hover;
 			}
-			@media (prefers-color-scheme: dark) {
-				.d2l-link-elem, .d2l-link-elem:visited, .d2l-link-elem:active, .d2l-link-elem:link,
-				.d2l-link-elem:hover, .d2l-link-elem:focus, :host(.d2l-link-focus) .d2l-link-elem  {
-					color: var(--d2l-color-celestine-plus-1);
-				}
+
+			:host-context(.d2l-dark-mode) .d2l-link-elem,
+			:host-context(.d2l-dark-mode) .d2l-link-elem:visited,
+			:host-context(.d2l-dark-mode) .d2l-link-elem:active,
+			:host-context(.d2l-dark-mode) .d2l-link-elem:link,
+			:host-context(.d2l-dark-mode) .d2l-link-elem:hover,
+			:host-context(.d2l-dark-mode) .d2l-link-elem:focus {
+				color: var(--d2l-color-celestine-plus-1);
 			}
+
 		</style>
 		<a class="d2l-link-elem d2l-focusable" aria-label$="[[ariaLabel]]" download$="[[download]]" href$="[[href]]" hreflang="[[hreflang]]" rel="[[rel]]" target="[[target]]" type="[[type]]"><slot></slot></a>
 	</template>
