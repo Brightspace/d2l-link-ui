@@ -35,12 +35,12 @@ $_documentContainer.innerHTML = `<dom-module id="d2l-link">
 				@apply --d2l-link-hover;
 			}
 
-			:host-context(.d2l-dark-mode) .d2l-link-elem,
-			:host-context(.d2l-dark-mode) .d2l-link-elem:visited,
-			:host-context(.d2l-dark-mode) .d2l-link-elem:active,
-			:host-context(.d2l-dark-mode) .d2l-link-elem:link,
-			:host-context(.d2l-dark-mode) .d2l-link-elem:hover,
-			:host-context(.d2l-dark-mode) .d2l-link-elem:focus {
+			:host-context([d2l-color-scheme="dark"]) .d2l-link-elem,
+			:host-context([d2l-color-scheme="dark"]) .d2l-link-elem:visited,
+			:host-context([d2l-color-scheme="dark"]) .d2l-link-elem:active,
+			:host-context([d2l-color-scheme="dark"]) .d2l-link-elem:link,
+			:host-context([d2l-color-scheme="dark"]) .d2l-link-elem:hover,
+			:host-context([d2l-color-scheme="dark"]) .d2l-link-elem:focus {
 				color: var(--d2l-color-celestine-plus-1);
 			}
 

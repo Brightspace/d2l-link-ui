@@ -25,13 +25,13 @@
 		letter-spacing: 0.01rem;
 	}
 
-	&.d2l-dark-mode,
-	&.d2l-dark-mode:visited,
-	&.d2l-dark-mode:link,
-	&.d2l-dark-mode:active,
-	&.d2l-dark-mode:hover,
-	&.d2l-dark-mode:focus,
-	&.d2l-dark-mode.d2l-link-focus {
+	[d2l-color-scheme="dark"] &,
+	[d2l-color-scheme="dark"] &:visited,
+	[d2l-color-scheme="dark"] &:link,
+	[d2l-color-scheme="dark"] &:active,
+	[d2l-color-scheme="dark"] &:hover,
+	[d2l-color-scheme="dark"] &:focus,
+	[d2l-color-scheme="dark"] &.d2l-link-focus {
 		color: $d2l-color-celestine-plus-1;
 	}
 
