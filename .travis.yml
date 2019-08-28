@@ -5,21 +5,13 @@ script:
 - |
   if [ $TRAVIS_PULL_REQUEST != false ] && [ $TRAVIS_SECURE_ENV_VARS == true ]; then
     echo "Pull request with secure environment variables, running Sauce tests...";
-    npm run test:polymer:sauce && npm run test:galen:sauce || travis_terminate 1;
+    npm run test:polymer:sauce || travis_terminate 1;
   else
     echo "Not a pull request and/or no secure environment variables, running headless tests...";
     npm run test:polymer:local || travis_terminate 1;
   fi
 after_success:
 - frauci-update-version -d=skip && export TRAVIS_TAG=$(frauci-get-version)
-addons:
-  apt:
-    packages:
-    - oracle-java8-installer
-  chrome: stable
-before_install:
-- export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-- export PATH=$JAVA_HOME/bin:$PATH
 deploy:
   provider: releases
   api_key: "$GITHUB_RELEASE_TOKEN"

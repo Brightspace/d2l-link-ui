@@ -143,21 +143,11 @@ To run unit tests locally using [Polymer test](https://www.polymer-project.org/2
 npm run test:polymer:local
 ```
 
-To run [Galen Tests](http://galenframework.com/), which test the resolved CSS:
-
-```shell
-npm run galen:local:run
-```
-
-To lint AND run local unit tests AND Galen tests:
+To lint AND run local unit tests:
 
 ```shell
 npm test
 ```
-
-### Dumping Galen Output
-
-The output of the Galen tests can be dumped using the command `npm run galen:local:dump`. Screenshots of the test objects will be put in `test\acceptance\dumps`, and can be used to perform perceptual diffs before/after any changes. The  "baseline" version should be committed to source control.
 
 [bower-url]: http://bower.io/search/?q=d2l-link
 [bower-image]: https://badge.fury.io/bo/d2l-link.svg
