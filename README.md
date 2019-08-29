@@ -143,32 +143,19 @@ To run unit tests locally using [Polymer test](https://www.polymer-project.org/2
 npm run test:polymer:local
 ```
 
-To run [Galen Tests](http://galenframework.com/), which test the resolved CSS:
-
-```shell
-npm run galen:local:run
-```
-
-To lint AND run local unit tests AND Galen tests:
+To lint AND run local unit tests:
 
 ```shell
 npm test
 ```
-
-### Dumping Galen Output
-
-The output of the Galen tests can be dumped using the command `npm run galen:local:dump`. Screenshots of the test objects will be put in `test\acceptance\dumps`, and can be used to perform perceptual diffs before/after any changes. The  "baseline" version should be committed to source control.
 
 [bower-url]: http://bower.io/search/?q=d2l-link
 [bower-image]: https://badge.fury.io/bo/d2l-link.svg
 [ci-image]: https://travis-ci.org/BrightspaceUI/link.svg?branch=master
 [ci-url]: https://travis-ci.org/BrightspaceUI/link
 
-## Versioning
+## Versioning & Releasing
 
-Commits and PR merges to master will automatically do a minor version bump which will:
-* Update the version in `package.json`
-* Add a tag matching the new version
-* Create a github release matching the new version
+All version changes should obey [semantic versioning](https://semver.org/) rules.
 
-By using either **[increment major]** or **[increment patch]** notation inside your merge message, you can overwrite the default version upgrade of minor to the position of your choice.
+Include either `[increment major]`, `[increment minor]` or `[increment patch]` in your merge commit message to automatically increment the `package.json` version and create a tag during the next build.

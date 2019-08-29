@@ -1,8 +1,0 @@
-@objects
-	custom-element-standard			xpath //d2l-link[@id='custom-element-standard']//a
-	custom-element-standard-focus	xpath //d2l-link[@id='custom-element-standard-focus']//a
-	custom-element-main				xpath //d2l-link[@id='custom-element-main']//a
-	custom-element-small			xpath //d2l-link[@id='custom-element-small']//a
-	custom-element-main-small		xpath //d2l-link[@id='custom-element-main-small']//a
-
-@import link.common.gspec
