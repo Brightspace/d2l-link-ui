@@ -151,8 +151,8 @@ npm test
 
 [bower-url]: http://bower.io/search/?q=d2l-link
 [bower-image]: https://badge.fury.io/bo/d2l-link.svg
-[ci-image]: https://travis-ci.org/BrightspaceUI/link.svg?branch=master
-[ci-url]: https://travis-ci.org/BrightspaceUI/link
+[ci-image]: https://travis-ci.com/BrightspaceUI/link.svg?branch=master
+[ci-url]: https://travis-ci.com/BrightspaceUI/link
 
 ## Versioning & Releasing
 
