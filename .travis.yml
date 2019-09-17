@@ -1,15 +1,7 @@
 language: node_js
 node_js: node
 script:
-- npm run lint
-- |
-  if [ $TRAVIS_PULL_REQUEST != false ] && [ $TRAVIS_SECURE_ENV_VARS == true ]; then
-    echo "Pull request with secure environment variables, running Sauce tests...";
-    npm run test:polymer:sauce || travis_terminate 1;
-  else
-    echo "Not a pull request and/or no secure environment variables, running headless tests...";
-    npm run test:polymer:local || travis_terminate 1;
-  fi
+- npm test
 after_success:
 - frauci-update-version -d=skip && export TRAVIS_TAG=$(frauci-get-version)
 deploy:
@@ -21,6 +13,4 @@ env:
   global:
   - OWNER_NAME=BrightspaceUI
   - REPO_NAME=link
-  - SAUCE_USERNAME: Desire2Learn
-  - secure: OiBrrLVxknJO2DGUuxz9Hkg98Zcot7HklpraLHdejsqfqEkEs8NQxr+YVFTNYSNhnzI4nwumhvGYcnlOcdA2+XQlTrJuwPI8eH9dDFEaQs3Qlo92yNjnoLDF93XbZihp4qYtOxBiPuW1rsIZ8bTTxkSbJ2Cxc3wEJWuTx01m2YY=
   - secure: VQG/4O+tDMa5k0C051jllUxYWM5fw7MCn1gNhP8qZjIcFGVQ9miDYXmr+NGpsP1CfTCKKkYxuE0aVsPi4IG0+dsNIhOfyEb+LT3o4F18L8CxPdRu62rfaR0a2/xudZd7TABmZJ4oc3DbqmqFRBPF0HrPPP6eZG8wQFSbs8IXLAU=
