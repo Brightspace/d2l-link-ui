@@ -2,15 +2,3 @@ language: node_js
 node_js: node
 script:
 - npm test
-after_success:
-- frauci-update-version -d=skip && export TRAVIS_TAG=$(frauci-get-version)
-deploy:
-  provider: releases
-  api_key: "$GITHUB_RELEASE_TOKEN"
-  on:
-    tags: true
-env:
-  global:
-  - OWNER_NAME=BrightspaceUI
-  - REPO_NAME=link
-  - secure: VQG/4O+tDMa5k0C051jllUxYWM5fw7MCn1gNhP8qZjIcFGVQ9miDYXmr+NGpsP1CfTCKKkYxuE0aVsPi4IG0+dsNIhOfyEb+LT3o4F18L8CxPdRu62rfaR0a2/xudZd7TABmZJ4oc3DbqmqFRBPF0HrPPP6eZG8wQFSbs8IXLAU=
